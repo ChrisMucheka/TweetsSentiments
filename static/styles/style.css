@@ -1,0 +1,28 @@
+html,body
+{
+  background-color:whitesmoke;
+  color:grey;
+}
+H1
+{
+  color:navy;
+}
+input
+{
+ width:20%;
+}
+/* Create three equal columns that floats next to each other */
+  .column1 {
+  float: left;
+  width: 32.5%;
+  padding: 50px;
+
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

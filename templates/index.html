@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+    {% block content %}
+<div class="container">
+    <H1>Tweet Sentiments</H1>
+    <p>This is an analysis on data from twitter on a specific       topic 
+    </p>
+     {% with messages = get_flashed_messages(with_categories=true) %}
+     {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            <p style="color:red; font-size:18px;">{{ message }}</p>
+       </div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form id="form1" action="/results" method="POST">
+        {{form.hidden_tag()}}
+           <fieldset class="form-group">
+            <legend class="border-bottom, mb-4">
+                <div class="form-group">
+                    {{form.wordTopic.label(class="form-control-label")}}
+                    {{form.wordTopic(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.noOfTweet.label(class="form-control-label")}}
+                    {{form.noOfTweet(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.noOfTopWords.label(class="form-control-label")}}
+                    {{form.noOfTopWords(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.noOfTopHash.label(class="form-control-label")}}
+                    {{form.noOfTopHash(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.noOfTopRetweets.label(class="form-control-label")}}
+                    {{form.noOfTopRetweets(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group" align="center">
+                    {{form.submit(class="btn btn-outline-info")}}
+                </div>
+
+            </legend>
+        </fieldset>
+    </form>
+</div>
+ {% endblock content %}
