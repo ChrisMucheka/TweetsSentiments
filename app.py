@@ -15,7 +15,7 @@ hashRetweetTable = {}
 cachedStopWords  =  stopwords.words("english")
 
 app = Flask(__name__)
-app.config['SECRET_KEY']='FDSJKHREU5489T7YGSNBJHDFKGH8734BUBSFDMG783'
+app.config['SECRET_KEY']='key'
 
 #ploting graphs on the result page
 @app.route('/results',methods=['GET','POST'])
